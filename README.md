@@ -28,10 +28,11 @@ ZhuaTech PricingAI 是面向零售、商贸和制造企业的智能定价社区�
 - 成本、当前价、竞品中位价、库存覆盖和价格弹性组合计算
 - `RAISE / LOWER / HOLD` 调价建议及变化率、预计毛利率
 - 最低毛利硬护栏和大幅调价二级审批
+- 候选价格沙盘，模拟弹性销量、收入、毛利和多重发布护栏
 - 定价任务、价格日历、版本审批和生效跟踪
 - 管理端、响应式 H5、JWT、MySQL、Flyway 和 Docker Compose
 
-`POST /api/ai/pricing/recommend` 提供不依赖外部 API Key 的参考定价策略。推荐结果始终返回 `approvalRequired=true`，避免把演示算法误当作自动发布系统。
+`POST /api/ai/pricing/recommend` 与 `POST /api/ai/pricing/simulate-guardrail` 提供不依赖外部 API Key 的参考定价策略。推荐结果始终保留人工审批边界，避免把演示算法误当作自动发布系统。
 
 ## 工程栈
 

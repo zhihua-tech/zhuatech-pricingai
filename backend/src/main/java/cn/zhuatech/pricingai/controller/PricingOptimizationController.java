@@ -19,4 +19,10 @@ public class PricingOptimizationController {
         @Valid @RequestBody PricingOptimizationService.Request request) {
         return ApiResponse.ok("价格建议生成完成", service.recommend(request));
     }
+
+    @PostMapping("/simulate-guardrail")
+    public ApiResponse<PricingOptimizationService.SimulationResult> simulateGuardrail(
+        @Valid @RequestBody PricingOptimizationService.SimulationRequest request) {
+        return ApiResponse.ok("价格护栏模拟完成", service.simulateGuardrail(request));
+    }
 }

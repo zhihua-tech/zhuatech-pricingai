@@ -10,6 +10,7 @@
 | GET | `/api/shopfloor/dashboard` | 价格优化运营台 |
 | POST | `/api/shopfloor/work-orders/{id}/reports` | 提交处理反馈 |
 | POST | `/api/ai/pricing/recommend` | 建议价、毛利护栏和调整原因 |
+| POST | `/api/ai/pricing/simulate-guardrail` | 模拟候选价的销量、收入、毛利与发布门禁 |
 | POST | `/api/shopfloor/ai-risk-assessment` | AI 功能上线风险初筛 |
 
 除登录外均需 `Authorization: Bearer <token>`。社区演示实现不调用外部模型，不需要 API Key。

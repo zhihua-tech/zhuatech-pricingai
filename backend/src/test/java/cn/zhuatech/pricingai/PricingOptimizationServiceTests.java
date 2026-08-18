@@ -24,4 +24,13 @@ class PricingOptimizationServiceTests {
         assertThat(result.recommendedPrice()).isEqualByComparingTo("130.00");
         assertThat(result.reasons()).anyMatch(item -> item.contains("最低毛利"));
     }
+
+    @Test void blocksCandidatePriceBelowMarginFloor() {
+        var result = service.simulateGuardrail(new PricingOptimizationService.SimulationRequest(
+            "SKU-002", new BigDecimal("100"), new BigDecimal("145"), new BigDecimal("118"),
+            1000, new BigDecimal("1.4"), new BigDecimal("0.25"), new BigDecimal("0.15")));
+        assertThat(result.guardrailDecision()).isEqualTo("BLOCK");
+        assertThat(result.floorPrice()).isEqualByComparingTo("125.00");
+        assertThat(result.guardrailHits()).anyMatch(item -> item.contains("最低毛利"));
+    }
 }
