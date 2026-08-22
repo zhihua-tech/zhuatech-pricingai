@@ -1,4 +1,4 @@
-/* Copyright 2026 上海如静知华信息科技有限公司 */
+/* Copyright 2026 上海如静知华信息科技有限公司 · https://www.zhuatech.cn/ */
 export const domain={
  code:'PRICINGAI',systemName:'知华智能定价 AI 平台',englishName:'AI PRICING OPTIMIZATION',theme:{primary:'#3d6370',dark:'#203941',accent:'#d2873f'},
  workspace:'商业运营中心 / 定价策略组',fieldWorkspace:'零售事业部 / 华东定价组',period:'2026-08-15 · 日内更新',liveText:'成本、库存与竞品数据于 10:32 更新',fieldContextLabel:'生效周期',fieldContext:'08-15 12:00—24:00',fieldUser:'唐悦',fieldRole:'定价分析师',adminUser:'孟川',adminRole:'商业运营负责人',
