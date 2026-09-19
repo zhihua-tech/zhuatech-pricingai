@@ -6,9 +6,15 @@ import org.junit.jupiter.api.Test;
 import java.math.BigDecimal;
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 class PricingOptimizationServiceTests {
     private final PricingOptimizationService service = new PricingOptimizationService();
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void lowersPriceForExcessInventory() {
         var result = service.recommend(new PricingOptimizationService.Request("SKU-001",
             new BigDecimal("60"), new BigDecimal("120"), new BigDecimal("110"),
@@ -17,6 +23,9 @@ class PricingOptimizationServiceTests {
         assertThat(result.recommendedPrice()).isGreaterThanOrEqualTo(result.floorPrice());
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void protectsMarginFloor() {
         var result = service.recommend(new PricingOptimizationService.Request("SKU-002",
             new BigDecimal("100"), new BigDecimal("130"), new BigDecimal("105"),
@@ -25,6 +34,9 @@ class PricingOptimizationServiceTests {
         assertThat(result.reasons()).anyMatch(item -> item.contains("最低毛利"));
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     @Test void blocksCandidatePriceBelowMarginFloor() {
         var result = service.simulateGuardrail(new PricingOptimizationService.SimulationRequest(
             "SKU-002", new BigDecimal("100"), new BigDecimal("145"), new BigDecimal("118"),

@@ -12,8 +12,14 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+ */
 @Service
 public class PricingOptimizationService {
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public Result recommend(Request request) {
         BigDecimal floorPrice = request.unitCost().multiply(BigDecimal.ONE.add(request.minimumMarginRate()));
         BigDecimal marketAnchor = request.competitorMedianPrice().multiply(new BigDecimal("0.6"))
@@ -38,6 +44,9 @@ public class PricingOptimizationService {
             marginRate, changeRate, action, reasons, true);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public SimulationResult simulateGuardrail(SimulationRequest request) {
         BigDecimal floorPrice = request.unitCost().multiply(BigDecimal.ONE.add(request.minimumMarginRate()))
             .setScale(2, RoundingMode.HALF_UP);
@@ -64,6 +73,9 @@ public class PricingOptimizationService {
             projectedMarginRate, projectedUnits, projectedRevenue, projectedGrossProfit, guardrailHits);
     }
 
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Request(@NotBlank String skuCode,
                           @DecimalMin("0.01") BigDecimal unitCost,
                           @DecimalMin("0.01") BigDecimal currentPrice,
@@ -71,9 +83,15 @@ public class PricingOptimizationService {
                           @DecimalMin("0") BigDecimal minimumMarginRate,
                           int inventoryCoverDays,
                           @DecimalMin("0") BigDecimal priceElasticity) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record Result(String skuCode, BigDecimal recommendedPrice, BigDecimal floorPrice,
                          BigDecimal projectedMarginRate, BigDecimal priceChangeRate,
                          String action, List<String> reasons, boolean approvalRequired) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record SimulationRequest(@NotBlank String skuCode,
                                     @DecimalMin("0.01") BigDecimal unitCost,
                                     @DecimalMin("0.01") BigDecimal currentPrice,
@@ -82,6 +100,9 @@ public class PricingOptimizationService {
                                     @DecimalMin("0") BigDecimal priceElasticity,
                                     @DecimalMin("0") @DecimalMax("1") BigDecimal minimumMarginRate,
                                     @DecimalMin("0.01") @DecimalMax("1") BigDecimal maximumChangeRate) {}
+    /**
+     * 商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。
+     */
     public record SimulationResult(String skuCode, String guardrailDecision, BigDecimal floorPrice,
                                    BigDecimal priceChangeRate, BigDecimal projectedMarginRate,
                                    int projectedUnits, BigDecimal projectedRevenue,
