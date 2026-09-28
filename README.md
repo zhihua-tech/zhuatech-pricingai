@@ -2,6 +2,8 @@
 
 # ZhuaTech PricingAI
 
+[简体中文](README.md) | [English](README.en.md)
+
 ### 知华智能定价 AI 平台
 
 响应竞争与库存变化，但始终守住成本、毛利和人工审批边界。
