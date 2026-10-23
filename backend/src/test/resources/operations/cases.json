@@ -1,0 +1,67 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "unitContribution": "#28",
+      "campaignContribution": "#520",
+      "breakEvenUnits": "#72"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "soldQty": "71",
+      "returnedQty": "0"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "soldQty": "72",
+      "returnedQty": "0"
+    },
+    "expected": {
+      "decision": "PASS",
+      "campaignContribution": "#16"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "unitCost": "88"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "breakEvenUnits": "N/A"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "returnedQty": "101"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "commissionPct": "99",
+      "paymentPct": "2"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "fixedCost": "0"
+    },
+    "expected": {
+      "breakEvenUnits": "#0"
+    },
+    "error": false
+  }
+]

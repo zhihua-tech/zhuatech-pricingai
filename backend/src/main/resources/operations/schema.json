@@ -1,0 +1,106 @@
+{
+  "slug": "pricingai",
+  "title": "退货佣金后贡献与盈亏平衡量",
+  "fields": [
+    {
+      "key": "id",
+      "label": "记录编号",
+      "type": "ID"
+    },
+    {
+      "key": "soldQty",
+      "label": "销售件数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "1000000"
+    },
+    {
+      "key": "returnedQty",
+      "label": "退货件数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "0",
+      "max": "1000000"
+    },
+    {
+      "key": "unitPrice",
+      "label": "净单价元",
+      "type": "NUMBER",
+      "scale": 2,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "unitCost",
+      "label": "单位变动成本元",
+      "type": "NUMBER",
+      "scale": 2,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "commissionPct",
+      "label": "佣金率%",
+      "type": "NUMBER",
+      "scale": 4,
+      "min": "0",
+      "max": "100"
+    },
+    {
+      "key": "paymentPct",
+      "label": "支付费率%",
+      "type": "NUMBER",
+      "scale": 4,
+      "min": "0",
+      "max": "100"
+    },
+    {
+      "key": "fixedCost",
+      "label": "活动固定费用元",
+      "type": "NUMBER",
+      "scale": 2,
+      "min": "0",
+      "max": "1000000000000"
+    }
+  ],
+  "columns": [
+    {
+      "key": "netUnits",
+      "label": "退货后净件数"
+    },
+    {
+      "key": "unitContribution",
+      "label": "单位净贡献元"
+    },
+    {
+      "key": "campaignContribution",
+      "label": "活动净贡献元"
+    },
+    {
+      "key": "breakEvenUnits",
+      "label": "盈亏平衡件数"
+    }
+  ],
+  "description": "扣退货后计算净销售件数，扣佣金、支付费、变动成本及活动固定费，核算盈亏平衡件数。非财务收入确认或自动调价。",
+  "owner": "上海如静知华信息科技有限公司",
+  "website": "https://www.zhuatech.cn/",
+  "authorization": "商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。",
+  "version": 1,
+  "notes": "输入均须为已获授权的同口径数据。金额固定人民币元；比例为百分数。核算结果只用于复核，未审批、未写库、未发起外部调用，也未触发付款、签名、资料销毁或设备控制。建议不构成法律、安全、会计或碳核证结论。",
+  "sample": {
+    "asOf": "2026-10-24",
+    "records": [
+      {
+        "id": "ITEM-001",
+        "soldQty": "100",
+        "returnedQty": "10",
+        "unitPrice": "100",
+        "unitCost": "60",
+        "commissionPct": "10",
+        "paymentPct": "2",
+        "fixedCost": "2000"
+      }
+    ]
+  }
+}
