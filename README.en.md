@@ -1,5 +1,9 @@
 [简体中文](README.md) | **English**
 
+## Functional update: Net contribution price waterfall
+
+Calculates net contribution after discount, commission, cost and freight, and derives the minimum list price needed for a target contribution margin. Signed-in users can edit inputs and export real computed results. See [API, examples and limitations](docs/AI_OPERATIONS_UPGRADE_20261023.md). No external model calls or automatic business changes; existing licensing and contacts remain unchanged. Existing recommendation/simulation APIs now use cost divided by one minus the gross margin, rounded up to cents, and reject a 100 percent margin.
+
 # ZhuaTech PricingAI
 
 > A source-available enterprise project by [ZhuaTech](https://www.zhuatech.cn/) for enterprise finance, planning, settlement, and risk control.
